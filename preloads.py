@@ -23,20 +23,14 @@ def conut_position_personnel(formation ):
     try :
         for entry in formation_arr:
             latters = re.findall('[A-Z]', entry)
-            pos = re.search(''.join(latters), string_of_positions)[0]
-            print(pos)
+            pos = re.findall("".join(latters), string_of_positions)[0]
             number_of_players = int(re.findall('[0-9]', entry)[0])
-            print(number_of_players)
             pos_dic [pos] = number_of_players
     except TypeError:
         print("can't find the position in the personnel ")
     
 
     return pos_dic
-
-
-
-print(re.search(''.join(['R','B']),string_of_positions))[0]
 
 # print(re.search(, string_of_positions)[0])
 # conut_position_personnel(test_data)
