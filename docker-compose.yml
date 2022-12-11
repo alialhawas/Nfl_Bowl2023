@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: nflbowl
+      MYSQL_PASSWORD: 1
+      
+    ports:
+      - "3307:3306"

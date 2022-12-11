@@ -32,8 +32,8 @@ def conut_position_personnel(formation ):
 
     return pos_dic
 
-# print(re.search(, string_of_positions)[0])
-# conut_position_personnel(test_data)
+
+
   
 
 
