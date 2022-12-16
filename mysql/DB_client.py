@@ -1,7 +1,7 @@
 import mysql.connector
 import os  
 
-def crate_connect():
+def create_connect():
     return mysql.connector.connect(user='root', password= 1,
                               host='localhost',
                               database= 'nflbowl')
@@ -9,7 +9,7 @@ def crate_connect():
 def create_cursor(connection):
     return connection.cursor()
 
-def execute_quaer(cursor, query):
+def execute_query(cursor, query):
     return cursor.execute(query)
 
 def close_connection(cursor, connection):
