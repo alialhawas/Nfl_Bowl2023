@@ -10,8 +10,11 @@ def get_player_logs(nflid, gameid, role, table):
     return f'SELECT * FROM nflbowl.{table} WHERE gameid = {gameid} AND nflid = {nflid} AND pff_role = {role}'
 
 def get_player_name(nflid):
-    return f'SELECT * FROM nflbowl.players WHERE nflid = {nflid}'
+    return f'SELECT name FROM nflbowl.players WHERE nflid = {nflid}'
 
 def get_players_games(nflid):
     return f'SELECT displayName FROM nflbowl.players WHERE nflid = {nflid}'
+
+def get_player_pos_game(gameid, playid, nflid):
+    return f'SELECT pff_positionLinedUp FROM nflbowl.pff_scouting WHERE gameid = {gameid} AND playid = {playid} AND nflid = {nflid}' 
 
