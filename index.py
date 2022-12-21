@@ -19,7 +19,7 @@ def player_worest_game(nflid, season):
 # gameid, nflid,
 # pff table: pff_role, pff_hurryAllowed, pff_sackAllowed, pff_hitAllowed, pff_beatenByDefender, pff_blockType
 # plays table: quarter, yardsToGo, possessionTeam, passResult, offenseFormation, personnelO
-# make a 1 for a boolean and scale for numerical veribles like how many penalty yards   
+# make a 1 for a boolean and scale for numerical veribles like how many penalty yards   total number of score / len(number of veribles) 
 def cal_score(gameid, playid, nflid):
     pff_info_query = get_pff_play_info(gameid, playid, nflid)
     play_info_query = get_play_info(gameid, playid, nflid)
