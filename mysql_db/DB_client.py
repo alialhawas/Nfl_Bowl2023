@@ -1,10 +1,11 @@
 import mysql.connector
-import os  
+
 
 def create_connect():
-    return mysql.connector.connect(user='root', password= 1,
+    return mysql.connector.connect(user='root', password= 'Aum.p9wx',
                               host='localhost',
-                              database= 'nflbowl')
+                              database= 'nflbowl',
+                              auth_plugin='mysql_native_password')
 
 def create_cursor(connection):
     return connection.cursor()
@@ -17,6 +18,14 @@ def close_connection(cursor, connection):
     connection.close()
 
     
+def mysql_ex(query):
+    connect =  create_connect()
+    cursor = create_cursor(connect)
+    R = execute_query(cursor,query)
+    print(R)
+    print(f'type of R : {R}')
+    return R
+
 
 
 

@@ -19,7 +19,10 @@ def get_player_pos_game(gameid, playid, nflid):
     return f'SELECT pff_positionLinedUp FROM nflbowl.pff_scouting WHERE gameid = {gameid} AND playid = {playid} AND nflid = {nflid}' 
 
 def get_pff_play_info(gameid, playid, nflid):
-    return f'SELECT pff_role, pff_hit, pff_hurry, pff_sack, pff_beatenByDefender, pff_hitAllowed, pff_blockType FROM ROM nflbowl.pff_scouting WHERE gameid = {gameid} AND playid = {playid} AND nflid = {nflid}'
+    return f'SELECT pff_role, pff_hit, pff_hurry, pff_sack, pff_beatenByDefender, pff_hitAllowed, pff_blockType FROM pffscoutingdata WHERE gameId = {gameid} AND playId = {playid} AND nflId = {nflid}'
 
-def get_play_info(gameid, playid, nflid ):
-    return f'SELECT quarter, yardsToGo, possessionTeam, passResult, offenseFormation, personnelO FROM nflbowl.plays WHERE gameid = {gameid} AND playid = {playid} AND nflid = {nflid}'
+def get_play_info(gameid, playid ):
+    return f'SELECT quarter, yardsToGo, possessionTeam, passResult, offenseFormation, personnelO FROM nflbowl.plays WHERE gameId = {gameid} AND playId = {playid}'
+
+def test (gameid):
+    return f'SELECT * FROM pffscoutingdata WHERE gameId = {gameid}'    
